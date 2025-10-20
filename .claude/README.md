@@ -150,7 +150,7 @@ The subagents work together following the label-based workflow:
 
 To create a custom subagent:
 
-1. Create `defaults/.claude/agents/your-agent.md`
+1. Create `.loom/roles/your-agent.md` in your workspace
 2. Add YAML frontmatter:
    ```yaml
    ---
