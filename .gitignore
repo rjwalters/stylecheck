@@ -3,3 +3,6 @@
 .loom/worktrees/
 .loom/*.log
 .loom/*.sock
+
+# Claude Code local settings (user-specific permissions)
+.claude/settings.local.json
