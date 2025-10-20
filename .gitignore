@@ -1,0 +1,5 @@
+# Loom - AI Development Orchestration
+.loom/state.json
+.loom/worktrees/
+.loom/*.log
+.loom/*.sock
