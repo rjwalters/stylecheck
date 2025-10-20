@@ -286,6 +286,26 @@ CREATE TABLE analyses (
 CREATE UNIQUE INDEX idx_hash_type ON analyses(file_hash, review_type);
 ```
 
+### Cache Invalidation Strategy (Decision)
+
+**Approach:** Hash-based automatic invalidation (no manual invalidation needed)
+
+**Cache Key:** `(file_hash, review_type)`
+
+**How it works:**
+- File content changes → SHA-256 hash changes → automatic cache miss → re-analyze
+- No TTL expiration needed (storage managed manually if needed)
+- No profile hash needed for MVP (assume single active profile)
+- No model version tracking needed (rare edge case)
+
+**Benefits:**
+- ✅ Dead simple - no complex invalidation logic
+- ✅ Always correct - cache perfectly reflects current file state
+- ✅ No background jobs - no TTL cleanup needed
+- ✅ Automatic - developers don't think about cache
+
+**Decision rationale:** Start with simplest approach that works. Add complexity (profile-aware caching, TTL expiration) only if users demonstrate need.
+
 ### User Experience
 1. Open file (never seen before) → Analyze → Show results → Cache
 2. Open same file again → Instant results from cache
