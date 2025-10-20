@@ -9,7 +9,7 @@ Build a tool that helps developers discover and enforce their personal coding ae
 **Profile-First**: Style preferences drive everything.
 **Iterative & Incremental**: Build working features in phases, each phase delivers usable value.
 **Learning-Oriented**: System should get smarter about user preferences over time.
-**Local-First**: Everything runs locally, no external dependencies except Claude API.
+**Local-First**: Everything runs locally, leverages Claude Code CLI (no direct API costs).
 **Repo-Agnostic**: Works with any repository, any language.
 
 ---
@@ -101,8 +101,8 @@ Show Claude Code review results in a separate pane next to the file.
 ### Features
 - [ ] Backend: Claude Code integration
   - [ ] POST `/api/analysis/run` - Execute Claude review on file
-  - [ ] Use Claude API directly (not CLI) for easier control
-  - [ ] Parse JSON response
+  - [ ] **DECISION (Issue #7)**: Use Claude Code CLI subprocess (leverages monthly billing plan)
+  - [ ] Spawn Claude Code CLI, capture stdout/stderr, parse JSON output
 - [ ] UI: Review Results Pane (right side or bottom)
   - [ ] Summary card (issue count by severity)
   - [ ] List of suggestions
@@ -391,7 +391,7 @@ Select 10 files → Click "Analyze All" → Watch progress → All cached for in
   "runtime": "Node.js 20+",
   "framework": "Express",
   "database": "better-sqlite3",
-  "api": "@anthropic-ai/sdk",
+  "claudeIntegration": "Claude Code CLI (subprocess)",
   "fileWatching": "chokidar",
   "hashing": "crypto (built-in)"
 }
@@ -454,7 +454,7 @@ tools/stylecheck/
 │   │   │   ├── analysis.ts
 │   │   │   └── cache.ts
 │   │   ├── services/
-│   │   │   ├── claude.ts      # Claude API integration
+│   │   │   ├── claude.ts      # Claude Code CLI subprocess wrapper
 │   │   │   ├── fileSystem.ts
 │   │   │   ├── cache.ts
 │   │   │   └── queue.ts
@@ -484,7 +484,7 @@ tools/stylecheck/
 7. Test with repository files
 
 ### Phase 2 Checklist
-1. Set up Claude API integration
+1. Set up Claude Code CLI subprocess integration
 2. Create analysis API endpoint
 3. Build review results panel component
 4. Add loading states
