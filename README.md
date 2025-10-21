@@ -906,3 +906,103 @@ Each config includes:
 - Comparative analysis (before/after metrics)
 - Machine learning for issue prioritization
 - Export reports (PDF, markdown, HTML)
+
+## Development Setup
+
+### Prerequisites
+
+- Node.js 20+ and pnpm
+- Modern browser with ES2022 support
+
+### Installation
+
+```bash
+# Install dependencies
+pnpm install
+
+# Install frontend dependencies
+cd frontend && pnpm install
+
+# Install backend dependencies
+cd ../backend && pnpm install
+```
+
+### Running the Development Environment
+
+From the root directory:
+
+```bash
+# Start both frontend and backend servers
+pnpm run dev
+```
+
+This will start:
+- **Frontend** on http://localhost:5173 (Vite + React + Tailwind CSS)
+- **Backend** on http://localhost:3001 (Express + SQLite)
+
+### Individual Server Commands
+
+```bash
+# Frontend only
+pnpm run dev:frontend
+
+# Backend only
+pnpm run dev:backend
+```
+
+### Building for Production
+
+```bash
+# Build both frontend and backend
+pnpm run build
+
+# Or build individually
+pnpm run build:frontend
+pnpm run build:backend
+```
+
+### API Endpoints
+
+- **Health Check**: `GET /api/health` - Verify backend connectivity
+
+### Project Structure
+
+```
+stylecheck/
+├── frontend/               # React + Vite + Tailwind CSS
+│   ├── src/
+│   │   ├── App.tsx        # Main React component
+│   │   ├── main.tsx       # React entry point
+│   │   ├── style.css      # Tailwind CSS imports
+│   │   └── lib/
+│   │       └── utils.ts   # shadcn/ui utilities
+│   └── package.json
+├── backend/               # Express + SQLite
+│   ├── src/
+│   │   ├── server.ts      # Express server
+│   │   └── db/
+│   │       ├── database.ts # SQLite initialization
+│   │       └── schema.sql  # Database schema
+│   └── package.json
+└── package.json           # Root scripts
+```
+
+### Tech Stack
+
+**Frontend**:
+- React 19 with TypeScript (strict mode)
+- Vite 7 (fast build tool)
+- Tailwind CSS 4 (utility-first CSS)
+- shadcn/ui utilities (cn helper, class-variance-authority)
+
+**Backend**:
+- Node.js + TypeScript
+- Express 5 (web framework)
+- better-sqlite3 (embedded database)
+- CORS enabled for frontend communication
+
+**Development Tools**:
+- tsx (TypeScript execution)
+- concurrently (parallel dev servers)
+- pnpm (package manager)
+
