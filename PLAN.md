@@ -14,6 +14,115 @@ Build a tool that helps developers discover and enforce their personal coding ae
 
 ---
 
+## Phase 0.5: Testing Infrastructure (Before Phase 1)
+
+### Goal
+Set up comprehensive testing framework and strategy before implementing features.
+
+### Rationale
+Establishing testing infrastructure early ensures:
+- Features are testable from day one
+- Developers write tests habitually (not as afterthought)
+- Clear quality standards established before code is written
+- Prevents "we'll add tests later" technical debt
+
+### Features
+- [ ] **Test Framework Setup**
+  - [ ] Install Vitest + React Testing Library (frontend)
+  - [ ] Install Vitest + Supertest (backend)
+  - [ ] Install Playwright (E2E tests)
+  - [ ] Configure test scripts in root `package.json`
+
+- [ ] **Test Configuration**
+  - [ ] Create `vitest.config.ts` for frontend
+  - [ ] Create `vitest.config.ts` for backend
+  - [ ] Create `playwright.config.ts` for E2E
+  - [ ] Set up test coverage reporting (c8/v8)
+
+- [ ] **Test Utilities Package**
+  - [ ] Create `packages/test-utils/` for shared fixtures
+  - [ ] Add profile fixtures (`profiles.fixture.ts`)
+  - [ ] Add analysis fixtures (`analysis.fixture.ts`)
+  - [ ] Add Claude Code service mocks (`claudeCodeService.mock.ts`)
+
+- [ ] **Testing Documentation**
+  - [ ] Create `docs/TESTING.md` with comprehensive strategy
+  - [ ] Document testing pyramid (unit 70%, integration 20%, E2E 10%)
+  - [ ] Define coverage thresholds (80% for critical paths)
+  - [ ] Document Claude Code CLI mocking strategy
+
+- [ ] **CI/CD Integration**
+  - [ ] Create `.github/workflows/test.yml`
+  - [ ] Configure parallel test execution
+  - [ ] Set up coverage reporting (Codecov)
+  - [ ] Add test quality gates for PRs
+
+### Testing Strategy Summary
+
+**Three-tier testing pyramid:**
+
+1. **Unit Tests (70%)**: Fast, focused tests for business logic
+   - Framework: Vitest + React Testing Library
+   - Examples: `hashProfile()`, `parseAnalysisResponse()`, React components
+   - Run time: <1 second
+
+2. **Integration Tests (20%)**: Test service interactions
+   - Framework: Vitest + Supertest
+   - Examples: API endpoints, database operations, Claude CLI mocking
+   - Run time: <10 seconds
+
+3. **E2E Tests (10%)**: Full user workflows
+   - Framework: Playwright
+   - Examples: Load profile → Analyze file → View results
+   - Run time: <60 seconds
+
+### Claude Code CLI Mocking
+
+**Challenge**: Testing features dependent on expensive Claude Code subprocess calls
+
+**Solution**: Service abstraction + dependency injection
+
+```typescript
+// Interface
+export interface ClaudeCodeService {
+  analyzeFile(filePath: string, profile: StyleProfile): Promise<AnalysisResult>;
+}
+
+// Real implementation (spawns subprocess)
+export class ClaudeCodeSubprocessService implements ClaudeCodeService { ... }
+
+// Mock implementation (uses test fixtures)
+export class MockClaudeCodeService implements ClaudeCodeService { ... }
+
+// Dependency injection in tests
+const service = new AnalysisService(new MockClaudeCodeService());
+```
+
+### Coverage Requirements
+
+| Module Type | Lines | Functions | Branches |
+|-------------|-------|-----------|----------|
+| Core Logic  | 90%   | 90%       | 85%      |
+| Services    | 85%   | 85%       | 80%      |
+| API Routes  | 80%   | 80%       | 75%      |
+| Components  | 75%   | 75%       | 70%      |
+| Utilities   | 90%   | 90%       | 85%      |
+
+### Deliverable
+
+Complete testing infrastructure ready before Phase 1 implementation:
+- ✅ All test frameworks installed and configured
+- ✅ Example tests demonstrating patterns
+- ✅ CI/CD pipeline running tests automatically
+- ✅ Documentation guiding developers on testing practices
+- ✅ Claude Code CLI mocking strategy implemented
+
+**Estimated time**: 2-3 days
+
+**Reference**: See `docs/TESTING.md` for complete testing strategy and patterns.
+
+---
+
 ## Phase 1: Profile Configuration & Basic Infrastructure (Week 1)
 
 ### Goal
