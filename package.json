@@ -1,0 +1,26 @@
+{
+  "name": "stylecheck",
+  "version": "0.1.0",
+  "description": "Code Aesthetics Engine - Discover and enforce personal coding aesthetics",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && pnpm dev",
+    "dev:backend": "cd backend && pnpm dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && pnpm build",
+    "build:backend": "cd backend && pnpm build"
+  },
+  "keywords": [
+    "code-quality",
+    "style",
+    "linting",
+    "aesthetics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.18.2",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
