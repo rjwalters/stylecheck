@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import db from './db/database.js';
+import profileRoutes from './routes/profiles.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,8 +19,12 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// API Routes
+app.use('/api', profileRoutes);
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`Health check available at http://localhost:${PORT}/api/health`);
+  console.log(`Profiles API available at http://localhost:${PORT}/api/profiles`);
 });
