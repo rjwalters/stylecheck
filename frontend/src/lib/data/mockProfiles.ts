@@ -1,0 +1,180 @@
+// Mock profile data for development (until Issue #8 API is implemented)
+
+import type { Profile } from '../types/profile';
+
+export const mockProfiles: Profile[] = [
+  {
+    id: 1,
+    name: 'Minimal',
+    description: 'Bare minimum style rules, maximum flexibility',
+    author: 'StyleCheck',
+    languages: ['python', 'typescript', 'javascript'],
+    is_builtin: true,
+    created_at: '2025-01-01T00:00:00Z',
+    updated_at: '2025-01-01T00:00:00Z',
+    custom_rules: [],
+    preferences: {
+      naming: {
+        variables: 'flexible',
+        functions: 'flexible',
+        classes: 'flexible',
+        constants: 'flexible',
+        private_prefix: 'none',
+      },
+      organization: {
+        import_style: 'flexible',
+        function_length: 'flexible',
+        class_structure: 'flexible',
+        file_organization: 'flexible',
+      },
+      documentation: {
+        comment_verbosity: 'minimal',
+        docstring_style: 'concise',
+        inline_comments: 'flexible',
+        todo_format: 'flexible',
+      },
+      typing: {
+        type_coverage: 'minimal',
+        return_annotations: 'none',
+        variable_annotations: 'avoid',
+        modern_syntax: 'allow',
+      },
+      structure: {
+        line_length: 120,
+        blank_lines: 'liberal',
+        bracket_style: 'K&R',
+        import_organization: 'multiple',
+      },
+      error_handling: {
+        exception_handling: 'implicit',
+        error_messages: 'concise',
+        validation: 'optimistic',
+        logging: 'minimal',
+      },
+      practices: {
+        type_hints: 'ignore',
+        f_strings: 'allow_all',
+        walrus_operator: 'avoid',
+        match_statements: 'traditional',
+      },
+    },
+  },
+  {
+    id: 2,
+    name: 'Type-Safe',
+    description: 'Comprehensive type annotations, strict typing',
+    author: 'StyleCheck',
+    languages: ['python', 'typescript'],
+    is_builtin: true,
+    created_at: '2025-01-01T00:00:00Z',
+    updated_at: '2025-01-01T00:00:00Z',
+    custom_rules: [
+      'All functions must have return type annotations',
+      'Prefer type aliases over Union types when used more than once',
+    ],
+    preferences: {
+      naming: {
+        variables: 'snake_case',
+        functions: 'verb_first',
+        classes: 'PascalCase',
+        constants: 'UPPER_CASE',
+        private_prefix: '_',
+      },
+      organization: {
+        import_style: 'grouped',
+        function_length: 'short',
+        class_structure: 'fields_first',
+        file_organization: 'one_class',
+      },
+      documentation: {
+        comment_verbosity: 'moderate',
+        docstring_style: 'detailed',
+        inline_comments: 'avoid',
+        todo_format: 'TODO:',
+      },
+      typing: {
+        type_coverage: 'comprehensive',
+        return_annotations: 'always',
+        variable_annotations: 'always',
+        modern_syntax: 'prefer',
+      },
+      structure: {
+        line_length: 100,
+        blank_lines: 'conservative',
+        bracket_style: 'K&R',
+        import_organization: 'one_per_line',
+      },
+      error_handling: {
+        exception_handling: 'explicit',
+        error_messages: 'verbose',
+        validation: 'defensive',
+        logging: 'extensive',
+      },
+      practices: {
+        type_hints: 'enforce',
+        f_strings: 'prefer',
+        walrus_operator: 'encourage',
+        match_statements: 'prefer',
+      },
+    },
+  },
+  {
+    id: 3,
+    name: 'Pragmatic',
+    description: 'Balanced approach, practical over dogmatic',
+    author: 'StyleCheck',
+    languages: ['python', 'typescript', 'javascript', 'go', 'rust'],
+    is_builtin: true,
+    created_at: '2025-01-01T00:00:00Z',
+    updated_at: '2025-01-01T00:00:00Z',
+    custom_rules: [
+      'Prefer readability over cleverness',
+      'Document the why, not the what',
+    ],
+    preferences: {
+      naming: {
+        variables: 'camelCase',
+        functions: 'verb_first',
+        classes: 'descriptive',
+        constants: 'UPPER_CASE',
+        private_prefix: '_',
+      },
+      organization: {
+        import_style: 'grouped',
+        function_length: 'medium',
+        class_structure: 'methods_first',
+        file_organization: 'flexible',
+      },
+      documentation: {
+        comment_verbosity: 'moderate',
+        docstring_style: 'concise',
+        inline_comments: 'encourage',
+        todo_format: '# TODO',
+      },
+      typing: {
+        type_coverage: 'moderate',
+        return_annotations: 'selective',
+        variable_annotations: 'when_needed',
+        modern_syntax: 'prefer',
+      },
+      structure: {
+        line_length: 100,
+        blank_lines: 'conservative',
+        bracket_style: 'K&R',
+        import_organization: 'one_per_line',
+      },
+      error_handling: {
+        exception_handling: 'explicit',
+        error_messages: 'verbose',
+        validation: 'defensive',
+        logging: 'minimal',
+      },
+      practices: {
+        type_hints: 'suggest',
+        f_strings: 'prefer',
+        walrus_operator: 'avoid',
+        match_statements: 'traditional',
+      },
+    },
+  },
+];
