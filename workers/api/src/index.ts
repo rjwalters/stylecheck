@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { auth } from './routes/auth';
+import { dev } from './routes/dev';
 import type { Env } from './types';
 
 const app = new Hono<{ Bindings: Env }>();
@@ -22,6 +23,9 @@ app.get('/', (c) => {
 
 // Auth routes
 app.route('/auth', auth);
+
+// Development routes (only active in dev environment)
+app.route('/dev', dev);
 
 // 404 handler
 app.notFound((c) => {

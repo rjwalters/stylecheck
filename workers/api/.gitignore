@@ -1,0 +1,12 @@
+# CLI session file
+.vibecov-session
+
+# Dependencies
+node_modules/
+
+# Wrangler output
+dist/
+.wrangler/
+
+# Local development
+.dev.vars

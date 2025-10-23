@@ -82,6 +82,12 @@ The API will be available at `http://localhost:8787`
 - `GET /auth/me` - Get current user (requires session cookie)
 - `POST /auth/logout` - Logout and clear session
 
+### Development (Local Only)
+
+- `POST /dev/create-session` - Create session with GitHub token (bypasses OAuth)
+- `POST /dev/seed` - Seed database with test data
+- `GET /dev/status` - Check database status
+
 ### Health Check
 
 - `GET /` - API health check
@@ -140,3 +146,157 @@ See `migrations/0001_initial_schema.sql` for the complete schema.
 - **Database**: Cloudflare D1 (SQLite)
 - **Cache**: Cloudflare KV (sessions)
 - **Auth**: GitHub OAuth 2.0
+
+## CLI Tool (Headless Development)
+
+The VibeCov CLI allows programmatic API access for testing and debugging without requiring browser-based OAuth.
+
+### Installation
+
+From the `workers/api` directory:
+
+```bash
+pnpm install
+```
+
+### Usage
+
+```bash
+# Login with GitHub Personal Access Token
+pnpm cli login ghp_xxxxxxxxxxxx
+
+# Check current user
+pnpm cli me
+
+# Make authenticated API request
+pnpm cli request GET /auth/me
+pnpm cli request POST /api/repos '{"name":"test"}'
+
+# Seed database with test data
+pnpm cli seed
+
+# Logout
+pnpm cli logout
+
+# Show help
+pnpm cli help
+```
+
+### Creating a GitHub PAT
+
+1. Go to https://github.com/settings/tokens
+2. Click "Generate new token (classic)"
+3. Select scopes: `read:user`, `user:email`
+4. Copy the generated token
+
+### Session Storage
+
+The CLI stores your session in `.vibecov-session` file in the current directory. This file contains your session ID and GitHub token, so keep it secure and add it to `.gitignore`.
+
+### Environment
+
+Set `API_URL` environment variable to point to your API:
+
+```bash
+API_URL=http://localhost:8787 pnpm cli me
+```
+
+Default: `http://localhost:8787`
+
+## Development Helpers
+
+### Quick Start
+
+The quickstart script sets up everything with one command:
+
+```bash
+./scripts/quickstart.sh <github-token>
+```
+
+This will:
+1. Install dependencies
+2. Start the API server
+3. Authenticate with your GitHub token
+4. Seed the database with test data
+5. Verify everything is working
+
+### API Client Library
+
+Use the client library for programmatic access:
+
+```typescript
+import { createClient } from './src/client';
+
+const client = createClient({
+  apiUrl: 'http://localhost:8787',
+});
+
+// Authenticate
+const session = await client.createSession(githubToken);
+
+// Get current user
+const { user } = await client.getCurrentUser();
+
+// Seed database
+await client.seedDatabase();
+
+// Make custom requests
+await client.call('GET', '/dev/status');
+```
+
+Run the example:
+
+```bash
+GITHUB_TOKEN=ghp_xxx pnpm example:client
+```
+
+### Test Fixtures
+
+Test fixtures provide ready-to-use mock data:
+
+```typescript
+import { fixtures } from './src/test/fixtures';
+import { createMockUser, mockGithubUsers } from './src/test/helpers';
+
+// Use pre-built fixtures
+const user = fixtures.users.full;
+const repo = fixtures.repositories.public;
+
+// Create custom mocks
+const mockUser = createMockUser('alice');
+const mockRepo = createMockRepository(mockUser.id, 'publicRepo');
+```
+
+Run the example:
+
+```bash
+pnpm example:fixtures
+```
+
+### Available Scripts
+
+```bash
+# API Server
+pnpm dev                  # Start development server
+pnpm deploy              # Deploy to Cloudflare Workers
+pnpm deploy:production   # Deploy to production
+
+# Database
+pnpm db:create           # Create D1 database
+pnpm db:migrate          # Run migrations (local)
+pnpm db:migrate:production  # Run migrations (production)
+
+# CLI Tool
+pnpm cli login <token>   # Login with GitHub token
+pnpm cli me              # Get current user
+pnpm cli seed            # Seed database
+pnpm cli logout          # Logout
+pnpm cli help            # Show help
+
+# Examples
+pnpm example:client      # Run client library example
+pnpm example:fixtures    # Run test fixtures example
+
+# Quick Start
+pnpm quickstart <token>  # Complete setup in one command
+```

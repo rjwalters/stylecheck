@@ -36,9 +36,15 @@ export interface Repository {
   name: string;
   full_name: string;
   is_private: boolean;
-  default_branch: string;
-  connected_at: string;
-  last_analyzed_at: string | null;
+  created_at: string;
+}
+
+export interface Profile {
+  id: number;
+  user_id: number;
+  name: string;
+  preferences: Record<string, any>;
+  created_at: string;
 }
 
 // GitHub OAuth types
