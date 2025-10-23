@@ -7,7 +7,7 @@ This document describes the technical architecture for VibeCov, a SaaS platform 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                         User Browser                         │
-│                    (vibecov.dev)                            │
+│                    (vibecov.com)                            │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         │ HTTPS
