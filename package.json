@@ -1,7 +1,7 @@
 {
-  "name": "stylecheck",
+  "name": "vibecheck",
   "version": "0.1.0",
-  "description": "Code Aesthetics Engine - Discover and enforce personal coding aesthetics",
+  "description": "SaaS platform for tracking and maintaining coding aesthetics across repositories",
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
@@ -13,12 +13,20 @@
   },
   "keywords": [
     "code-quality",
-    "style",
-    "linting",
-    "aesthetics"
+    "code-aesthetics",
+    "style-guide",
+    "vibe-coding",
+    "saas",
+    "github-integration",
+    "ai-code-review"
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjwalters/vibecheck"
+  },
+  "homepage": "https://vibecheck.dev",
   "packageManager": "pnpm@10.18.2",
   "devDependencies": {
     "concurrently": "^9.2.1"
