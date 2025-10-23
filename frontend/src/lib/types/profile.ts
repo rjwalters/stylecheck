@@ -1,4 +1,4 @@
-// Profile type definitions for StyleCheck
+// Profile type definitions for VibeCov
 
 export interface Profile {
   id: number;

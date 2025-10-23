@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "StyleCheck backend API",
+  "description": "VibeCov backend API",
   "type": "module",
   "main": "dist/server.js",
   "scripts": {
