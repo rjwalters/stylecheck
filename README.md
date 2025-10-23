@@ -1,17 +1,17 @@
-# VibeCheck 🎯
+# VibeCov 🎯
 
-**VibeCheck** helps developers define, track, and maintain their coding aesthetic across any repository.
+**VibeCov** helps developers define, track, and maintain their coding aesthetic across any repository.
 
 ## Vision
 
-In the era of "vibe coding" - where AI helps us write code faster than ever - maintaining consistent style and aesthetic becomes critical. **VibeCheck** is a SaaS platform (similar to codecov) that analyzes your repositories and provides aesthetic quality metrics, helping you spot files that don't match your coding vibe.
+In the era of "vibe coding" - where AI helps us write code faster than ever - maintaining consistent style and aesthetic becomes critical. **VibeCov** is a SaaS platform (similar to codecov) that analyzes your repositories and provides aesthetic quality metrics, helping you spot files that don't match your coding vibe.
 
 **Free for public repos, paid for private repos.**
 
 ## How It Works
 
 ### User Setup (Web Dashboard)
-1. **Sign in** to VibeCheck.dev with GitHub
+1. **Sign in** to VibeCov.com with GitHub
 2. **Configure your aesthetic**:
    - Choose preferred LLM (Claude, GPT-4, etc.)
    - Provide API keys (stored securely)
@@ -21,13 +21,13 @@ In the era of "vibe coding" - where AI helps us write code faster than ever - ma
 4. **Install GitHub integration** (optional - for badges and PR comments)
 
 ### Analysis & Metrics (Powered by Cloudflare AI Gateway)
-- VibeCheck analyzes your repository file-by-file
+- VibeCov analyzes your repository file-by-file
 - Each file gets a **vibe score** (0-100) based on your aesthetic preferences
 - Like codecov: track lines that are "stylish" vs "needs work"
 - Set threshold percentages for passing (e.g., 80% vibe score to pass)
 
 ### GitHub Integration
-- **Badges**: Add VibeCheck badge to your README showing repo vibe score
+- **Badges**: Add VibeCov badge to your README showing repo vibe score
 - **PR Comments**: Automatic aesthetic review on pull requests
 - **Status Checks**: Block PRs that drop below vibe threshold
 
@@ -143,9 +143,9 @@ custom_rules:
 ## Current Status
 
 This repository contains:
-- Frontend prototype (React + Vite + Tailwind)
-- Backend prototype (Express + SQLite)
-- Initial architecture and design docs
+- Frontend (React + Vite + Tailwind + shadcn/ui)
+- Architecture designed for Cloudflare Pages + Workers + D1
+- Comprehensive design and planning documentation
 
 **Next steps**: See [`ROADMAP.md`](./ROADMAP.md) for development timeline and [`ARCHITECTURE.md`](./ARCHITECTURE.md) for technical details.
 
@@ -165,13 +165,14 @@ pnpm install
 ### Running the Development Environment
 
 ```bash
-# Start both frontend and backend servers
+# Start frontend development server
 pnpm run dev
 ```
 
 This starts:
-- **Frontend** on http://localhost:5173 (Vite + React + Tailwind CSS)
-- **Backend** on http://localhost:3001 (Express + SQLite)
+- **Frontend** on http://localhost:5173 (Vite + React + Tailwind CSS + shadcn/ui)
+
+**Note**: Backend will be deployed as Cloudflare Workers. For local development with Workers, see Cloudflare's Wrangler documentation.
 
 See [`ARCHITECTURE.md`](./ARCHITECTURE.md) for complete technical documentation.
 
