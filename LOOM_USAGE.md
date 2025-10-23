@@ -1,8 +1,8 @@
-# Using Loom in StyleCheck
+# Using Loom in VibeCov
 
 This project uses **[Loom](https://github.com/rjwalters/loom)**, a multi-terminal orchestration system that coordinates AI-powered development workers using GitHub labels and git worktrees.
 
-> **Note**: This document covers how to **use** Loom in StyleCheck. For Loom's internal development documentation, see the [Loom repository](https://github.com/rjwalters/loom).
+> **Note**: This document covers how to **use** Loom in VibeCov. For Loom's internal development documentation, see the [Loom repository](https://github.com/rjwalters/loom).
 
 ## Core Concepts
 
@@ -242,4 +242,4 @@ git worktree prune
 
 ---
 
-*This lightweight guide covers Loom usage in StyleCheck. For Loom's internal architecture, development setup, and contribution guidelines, see the [Loom repository](https://github.com/rjwalters/loom).*
+*This lightweight guide covers Loom usage in VibeCov. For Loom's internal architecture, development setup, and contribution guidelines, see the [Loom repository](https://github.com/rjwalters/loom).*

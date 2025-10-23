@@ -1,4 +1,4 @@
--- StyleCheck Database Schema
+-- VibeCov Database Schema
 
 CREATE TABLE IF NOT EXISTS profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

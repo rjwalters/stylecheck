@@ -1,8 +1,8 @@
-# StyleCheck Testing Strategy
+# VibeCov Testing Strategy
 
 ## Overview
 
-StyleCheck implements a **three-tier testing pyramid** to ensure code quality, prevent regressions, and enable confident refactoring.
+VibeCov implements a **three-tier testing pyramid** to ensure code quality, prevent regressions, and enable confident refactoring.
 
 ```
         /\
@@ -366,7 +366,7 @@ export class ClaudeCodeSubprocessService implements ClaudeCodeService {
 
 ```typescript
 // backend/src/services/claude/MockClaudeCodeService.ts
-import { AnalysisFixtures } from '@stylecheck/test-utils';
+import { AnalysisFixtures } from '@vibecov/test-utils';
 
 export class MockClaudeCodeService implements ClaudeCodeService {
   async analyzeFile(filePath: string, profile: StyleProfile): Promise<AnalysisResult> {

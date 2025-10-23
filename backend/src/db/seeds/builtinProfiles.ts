@@ -14,7 +14,7 @@ export const builtinProfiles: ProfileData[] = [
   {
     name: 'Minimal',
     description: 'Lean preferences focusing only on critical style issues',
-    author: 'StyleCheck Team',
+    author: 'VibeCov Team',
     languages: ['python', 'javascript', 'typescript'],
     preferences: {
       naming: {
@@ -54,7 +54,7 @@ export const builtinProfiles: ProfileData[] = [
   {
     name: 'PEP 8',
     description: 'Standard Python style guide (PEP 8) compliance',
-    author: 'StyleCheck Team',
+    author: 'VibeCov Team',
     languages: ['python'],
     preferences: {
       naming: {
@@ -102,7 +102,7 @@ export const builtinProfiles: ProfileData[] = [
   {
     name: 'Google Style',
     description: "Google's Python style guide conventions",
-    author: 'StyleCheck Team',
+    author: 'VibeCov Team',
     languages: ['python'],
     preferences: {
       naming: {
@@ -154,7 +154,7 @@ export const builtinProfiles: ProfileData[] = [
   {
     name: 'Type-Safe',
     description: 'Heavy emphasis on type annotations and type safety',
-    author: 'StyleCheck Team',
+    author: 'VibeCov Team',
     languages: ['python', 'typescript'],
     preferences: {
       naming: {
@@ -206,7 +206,7 @@ export const builtinProfiles: ProfileData[] = [
   {
     name: 'Pragmatic',
     description: 'Balanced, readability-focused pragmatic style',
-    author: 'StyleCheck Team',
+    author: 'VibeCov Team',
     languages: ['python', 'javascript', 'typescript'],
     preferences: {
       naming: {
@@ -256,7 +256,7 @@ export const builtinProfiles: ProfileData[] = [
   {
     name: 'Strict',
     description: 'Very opinionated style that catches everything',
-    author: 'StyleCheck Team',
+    author: 'VibeCov Team',
     languages: ['python', 'javascript', 'typescript'],
     preferences: {
       naming: {

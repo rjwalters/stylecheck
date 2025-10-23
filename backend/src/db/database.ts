@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Initialize SQLite database
-const db = new Database(join(__dirname, '../../data/stylecheck.db'));
+const db = new Database(join(__dirname, '../../data/vibecov.db'));
 
 // Read and execute schema
 const schema = readFileSync(join(__dirname, 'schema.sql'), 'utf-8');

@@ -1,4 +1,4 @@
-# StyleCheck - Code Aesthetics Engine Development Plan
+# VibeCov - Code Aesthetics Engine Development Plan
 
 ## Vision
 
@@ -541,7 +541,7 @@ Select 10 files → Click "Analyze All" → Watch progress → All cached for in
 ## File Structure
 
 ```
-tools/stylecheck/
+tools/vibecov/
 ├── DESIGN.md              # This design document
 ├── PLAN.md                # This development plan
 ├── README.md              # Setup and usage instructions
@@ -633,7 +633,7 @@ tools/stylecheck/
 
 ```bash
 # Frontend setup
-cd tools/stylecheck/frontend
+cd tools/vibecov/frontend
 npm create vite@latest . -- --template react-ts
 npm install
 npm install -D tailwindcss postcss autoprefixer
@@ -643,7 +643,7 @@ npm install react-syntax-highlighter @types/react-syntax-highlighter
 npm install lucide-react
 
 # Backend setup
-cd tools/stylecheck/backend
+cd tools/vibecov/backend
 npm init -y
 npm install express cors better-sqlite3
 npm install -D @types/express @types/cors @types/better-sqlite3
