@@ -1,5 +1,5 @@
 {
-  "name": "vibecheck",
+  "name": "vibecov",
   "version": "0.1.0",
   "description": "SaaS platform for tracking and maintaining coding aesthetics across repositories",
   "private": true,
@@ -24,9 +24,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rjwalters/vibecheck"
+    "url": "https://github.com/rjwalters/vibecov"
   },
-  "homepage": "https://vibecheck.dev",
+  "homepage": "https://vibecov.dev",
   "packageManager": "pnpm@10.18.2",
   "devDependencies": {
     "concurrently": "^9.2.1"

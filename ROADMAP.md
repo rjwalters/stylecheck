@@ -1,6 +1,6 @@
-# VibeCheck Roadmap
+# VibeCov Roadmap
 
-This document outlines the development phases for transforming VibeCheck into a production SaaS platform.
+This document outlines the development phases for transforming VibeCov into a production SaaS platform.
 
 ## Current Status (Prototype)
 
@@ -16,7 +16,7 @@ We have:
 
 ### Frontend
 - [ ] Deploy React app to Cloudflare Pages
-- [ ] Set up custom domain (vibecheck.dev)
+- [ ] Set up custom domain (vibecov.dev)
 - [ ] Configure GitHub OAuth for authentication
 - [ ] Implement basic dashboard UI with shadcn/ui components
 

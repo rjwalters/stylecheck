@@ -1,13 +1,13 @@
-# VibeCheck Architecture
+# VibeCov Architecture
 
-This document describes the technical architecture for VibeCheck, a SaaS platform built entirely on Cloudflare's serverless infrastructure.
+This document describes the technical architecture for VibeCov, a SaaS platform built entirely on Cloudflare's serverless infrastructure.
 
 ## System Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                         User Browser                         │
-│                    (vibecheck.dev)                          │
+│                    (vibecov.dev)                            │
 └───────────────────────┬─────────────────────────────────────┘
                         │
                         │ HTTPS
@@ -253,7 +253,7 @@ interface RateLimit {
 
 ```typescript
 // Gateway endpoint
-const AI_GATEWAY_ENDPOINT = 'https://gateway.ai.cloudflare.com/v1/{account_id}/vibecheck';
+const AI_GATEWAY_ENDPOINT = 'https://gateway.ai.cloudflare.com/v1/{account_id}/vibecov';
 
 // Request structure
 interface LLMRequest {
@@ -623,7 +623,7 @@ jobs:
       - uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          projectName: vibecheck
+          projectName: vibecov
           directory: frontend/dist
 ```
 
