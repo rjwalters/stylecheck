@@ -18,13 +18,19 @@ export function LandingPage() {
               <a href="#docs" className="text-gray-600 hover:text-gray-900">Docs</a>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="text-gray-600 hover:text-gray-900 px-4 py-2">
+              <a
+                href="http://localhost:8787/auth/login"
+                className="text-gray-600 hover:text-gray-900 px-4 py-2"
+              >
                 Sign In
-              </button>
-              <button className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 flex items-center space-x-2">
+              </a>
+              <a
+                href="http://localhost:8787/auth/login"
+                className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 flex items-center space-x-2"
+              >
                 <span>Get Started Free</span>
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -44,13 +50,19 @@ export function LandingPage() {
               Catch style violations before they reach production with AI-powered analysis.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 flex items-center space-x-2">
+              <a
+                href="http://localhost:8787/auth/login"
+                className="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 flex items-center space-x-2"
+              >
                 <span>Try VibeCov for Free</span>
                 <ArrowRight className="h-5 w-5" />
-              </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400">
+              </a>
+              <a
+                href="mailto:hello@vibecov.com"
+                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-gray-400"
+              >
                 Get Demo
-              </button>
+              </a>
             </div>
             <p className="mt-4 text-sm text-gray-500">
               Free for public repositories • No credit card required
@@ -262,10 +274,13 @@ export function LandingPage() {
           <p className="text-xl text-indigo-100 mb-8">
             Start analyzing your repositories today. Free for public repos, no credit card required.
           </p>
-          <button className="bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-flex items-center space-x-2">
+          <a
+            href="http://localhost:8787/auth/login"
+            className="bg-white text-indigo-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-flex items-center space-x-2"
+          >
             <span>Get Started Free</span>
             <ArrowRight className="h-5 w-5" />
-          </button>
+          </a>
         </div>
       </section>
 

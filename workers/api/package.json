@@ -1,0 +1,21 @@
+{
+  "name": "vibecov-api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:production": "wrangler deploy --env production",
+    "db:create": "wrangler d1 create vibecov-db",
+    "db:migrate": "wrangler d1 migrations apply vibecov-db --local",
+    "db:migrate:production": "wrangler d1 migrations apply vibecov-db --remote"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "wrangler": "^3.94.0"
+  },
+  "dependencies": {
+    "hono": "^4.6.14"
+  }
+}
