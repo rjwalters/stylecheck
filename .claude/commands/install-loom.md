@@ -49,7 +49,7 @@ echo "Created issue #$ISSUE_NUMBER"
 
 **Verification**:
 - Issue number is captured (numeric value)
-- Issue is created with `loom:in-progress` label
+- Issue is created with `loom:building` label
 - Issue body includes Loom version and commit information
 
 ### Step 3: Create Installation Worktree
@@ -200,7 +200,7 @@ After PR is merged, verify the installation works:
 
 # Test in MOM Mode
 # 1. Open Claude Code in target repository
-# 2. Use slash commands: /builder, /judge, /curator, etc.
+# 2. Use slash commands: /builder, /judge, /curator, /champion, etc.
 # 3. Verify MCP servers work (if target-specific ones were added)
 ```
 
