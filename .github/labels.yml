@@ -25,8 +25,8 @@
   description: Curator is enhancing this issue
   color: "F59E0B"  # amber-500 - matches other in-progress states
 
-- name: loom:healing
-  description: Healer is fixing this bug or addressing PR feedback
+- name: loom:treating
+  description: Doctor is fixing this bug or addressing PR feedback
   color: "F59E0B"  # amber-500 - matches other in-progress states
 
 - name: loom:reviewing
@@ -44,11 +44,11 @@
 # Agent Proposal Labels
 - name: loom:architect
   description: Architect proposal awaiting user approval
-  color: "3B82F6"  # blue-500
+  color: "9333EA"  # purple (violet-600)
 
 - name: loom:hermit
   description: Hermit removal/simplification proposal awaiting user approval
-  color: "3B82F6"  # blue-500
+  color: "9333EA"  # purple (violet-600)
 
 - name: loom:curated
   description: Enhanced by Curator, awaiting human approval
