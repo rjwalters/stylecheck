@@ -113,7 +113,7 @@ When you identify an architectural opportunity, gather requirements by asking ab
 
 **Example engagement**:
 ```
-I've identified an opportunity to add caching for analysis results in VibeCov. Before I create a proposal, I need to understand a few things:
+I've identified an opportunity to add caching for analysis results in StyleCheck. Before I create a proposal, I need to understand a few things:
 
 1. What's your storage budget for cached data? (unlimited, 500MB, 100MB, etc.)
 2. How often do users re-analyze the same files? (every commit, weekly, rarely)
